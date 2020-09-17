@@ -7,4 +7,4 @@ Ballance Ball Replacement Tool.
 其他球：不会转的球，三高球，自动过关球，无语球，小弹力球，无重力球，大弹力球，半透明球
 原版球
 
-By AlwaysGu
+By AlwaysGu & Swung0x48
