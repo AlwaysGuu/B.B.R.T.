@@ -15,7 +15,8 @@ path = "Res/"
 
 def swap(arg):
     if arg is None:
-        sys.exit()
+        gui.msgbox("操作已被取消", title="B.B.R.T.")
+        sys.exit(1)
     if os.path.exists("Balls.nmo"):
         os.remove("Balls.nmo")
     shutil.copy(os.path.join(path, "Balls" + arg + ".nmo"), ballPath)
@@ -23,7 +24,9 @@ def swap(arg):
     sys.exit()
 
 
-if ballType == "默认":
+if ballType is None:
+    swap(ballType)
+elif ballType == "默认":
     swap("")
 elif ballType == "力量球":
     option = gui.choicebox("选择倍率：", "B.B.R.T.", ["1.5t", "2t", "3t", "5t", "10t", "50t", "100t"])
@@ -40,4 +43,7 @@ elif ballType == "其他球":
         "大弹力球": "T",
         "半透明球": "Translucent"
     }
-    swap(dictionary[option])
+    if option is None:
+        swap(option)
+    else:
+        swap(dictionary[option])
